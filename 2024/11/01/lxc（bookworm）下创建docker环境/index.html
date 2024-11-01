@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <meta name="description" content="" />
+    <meta name="hexo-theme-A4" content="v1.9.6" />
+    <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
+    <title>烟圈的博客</title>
+
+    
+        
+<link rel="stylesheet" href="/css/highlight/style1.css">
+
+        
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/markdown.css">
+
+        
+<link rel="stylesheet" href="/css/fonts.css">
+ 
+         <!--注意：首页既不是post也不是page-->
+        
+        
+        
+<link rel="stylesheet" href="/css/ui.css">
+ 
+        
+<link rel="stylesheet" href="/css/style.css">
+
+
+        
+            <!--返回顶部css-->
+            
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+            
+<link rel="stylesheet" href="/css/unicons.css">
+
+        
+        
+            <!--目录-->
+            
+<link rel="stylesheet" href="/css/toc.css">
+
+        
+    
+
+    
+        
+<link rel="stylesheet" href="/css/returnToLastPage.css">
+
+    
+    
+   
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+    
+    
+
+    
+    
+
+
+
+    
+
+    
+    
+
+    
+    
+    
+    <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
+        
+            <div class="left-toc-container">
+                <nav id="toc" class="bs-docs-sidebar"></nav>
+            </div>
+        
+        <div class="paper">
+            
+            
+            
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+
+
+<div class="header">
+    <div class="header-container">
+        <img style="
+        width: 56px;
+        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/favicon.webp" width="10%"></img>
+        <div class="header-content">
+            <a class="logo" href="/">烟圈的博客</a> 
+            <span class="description"></span> 
+        </div>
+        
+    </div>
+    
+   
+    <ul class="nav">
+        
+    </ul>
+</div> 
+        
+                    
+                    
+
+                    
+                    
+                    
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+    
+
+    
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    
+                </div>
+            
+        
+      
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                    <span>最近更新：2024-11-01</span> 
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                     <span>字数总计：486</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：2分钟</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span id="busuanzi_container_page_pv">
+                        阅读量：<span id="busuanzi_value_page_pv"></span>次
+                    </span>
+                
+            </div>
+    
+
+    <div class="post-md">
+        
+            
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E8%AF%B4%E5%9C%A8%E5%89%8D%E9%9D%A2"><span class="post-toc-text">说在前面</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%AE%89%E8%A3%85docker%E7%8E%AF%E5%A2%83"><span class="post-toc-text">安装docker环境</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%AE%89%E8%A3%85docker-compose%E7%8E%AF%E5%A2%83"><span class="post-toc-text">安装docker-compose环境</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%B8%BE2%E4%B8%AAdocker%E5%AE%9E%E4%BE%8B"><span class="post-toc-text">举2个docker实例</span></a></li></ol>
+            
+        
+        <div class=".article-gallery"><p>这边就不科普lxc是啥，dockers是啥了，直接开整！</p>
+<h2 id="说在前面"><a href="#说在前面" class="headerlink" title="说在前面"></a>说在前面</h2><p>首先在创建docker环境前，可以考虑在lxc内安装一些服务，比如samba等，方便后期上传下载，这边略过，教程一大把。</p>
+<h2 id="安装docker环境"><a href="#安装docker环境" class="headerlink" title="安装docker环境"></a>安装docker环境</h2><p>其实非常简单，一条命令即可，如下：<br><code>1. apt install docker.io -y</code><br><a href="/../_resources/%E6%88%AA%E5%9B%BE%202024-01-12%2017-46-30.png" title="截图 2024-01-12 17-46-30.png" class="gallery-item" style="box-shadow: none;"> <img src="/../_resources/%E6%88%AA%E5%9B%BE%202024-01-12%2017-46-30.png" alt="截图 2024-01-12 17-46-30.png"></a></p>
+<h2 id="安装docker-compose环境"><a href="#安装docker-compose环境" class="headerlink" title="安装docker-compose环境"></a>安装docker-compose环境</h2><p><a href="/../_resources/%E6%88%AA%E5%9B%BE%202024-01-12%2017-49-32.png" title="截图 2024-01-12 17-49-32.png" class="gallery-item" style="box-shadow: none;"> <img src="/../_resources/%E6%88%AA%E5%9B%BE%202024-01-12%2017-49-32.png" alt="截图 2024-01-12 17-49-32.png"></a><br>找到docker-compose下载链接，在lxc控制台内输入：<br><code>1. wget -c https://github.com/docker/compose/releases/download/v2.24.0/docker-compose-linux-x86_64 -O /usr/local/bin/docker-compose &amp;&amp; chmod +x docker-compose</code><br><a href="/../_resources/%E6%88%AA%E5%9B%BE%202024-01-12%2017-51-33.png" title="截图 2024-01-12 17-51-33.png" class="gallery-item" style="box-shadow: none;"> <img src="/../_resources/%E6%88%AA%E5%9B%BE%202024-01-12%2017-51-33.png" alt="截图 2024-01-12 17-51-33.png"></a><br><a href="/../_resources/%E6%88%AA%E5%9B%BE%202024-01-12%2017-56-59.png" title="截图 2024-01-12 17-56-59.png" class="gallery-item" style="box-shadow: none;"> <img src="/../_resources/%E6%88%AA%E5%9B%BE%202024-01-12%2017-56-59.png" alt="截图 2024-01-12 17-56-59.png"></a><br>可以通过docker info和docker-compose –version命令查看安装正常与否。<br><a href="/../_resources/%E6%88%AA%E5%9B%BE%202024-01-12%2017-57-55.png" title="截图 2024-01-12 17-57-55.png" class="gallery-item" style="box-shadow: none;"> <img src="/../_resources/%E6%88%AA%E5%9B%BE%202024-01-12%2017-57-55.png" alt="截图 2024-01-12 17-57-55.png"></a></p>
+<h2 id="举2个docker实例"><a href="#举2个docker实例" class="headerlink" title="举2个docker实例"></a>举2个docker实例</h2><p>简单docker部署，可以分为docker cli和docker-compose部署，docker cli的话以一个非常火的项目memos来举例，非常简单，一条命令如下：<br><code>1. docker run -itd --name memos --restart unless-stopped -p 5230:5230 -v /opt/appdata/memos:/var/opt/memos neosmemo/memos</code><br>等系统拉取镜像成功并实例化容器，显示如下：<br><a href="/../_resources/%E6%88%AA%E5%9B%BE%202024-01-12%2018-00-11.png" title="截图 2024-01-12 18-00-11.png" class="gallery-item" style="box-shadow: none;"> <img src="/../_resources/%E6%88%AA%E5%9B%BE%202024-01-12%2018-00-11.png" alt="截图 2024-01-12 18-00-11.png"></a><br>回浏览器，开启新页面，输入lxc的ip地址加端口5230回车，可以看到项目部署成功。<br><a href="/../_resources/%E6%88%AA%E5%9B%BE%202024-01-12%2018-00-54.png" title="截图 2024-01-12 18-00-54.png" class="gallery-item" style="box-shadow: none;"> <img src="/../_resources/%E6%88%AA%E5%9B%BE%202024-01-12%2018-00-54.png" alt="截图 2024-01-12 18-00-54.png"></a><br>docker-compose是用来部署那些相对较复杂的容器组合，举例如下：<br>在&#x2F;root目录下有一个notea.yml的文件，使用cat命令显示为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">version: &#x27;3&#x27;</span><br><span class="line"></span><br><span class="line">services:</span><br><span class="line">  minio:</span><br><span class="line">    container_name: notea_minio</span><br><span class="line">    restart: unless-stopped</span><br><span class="line">    image: minio/minio</span><br><span class="line">    volumes:</span><br><span class="line">      - /opt/appdata/notea:/data</span><br><span class="line">    environment:</span><br><span class="line">      MINIO_ACCESS_KEY: Gg0Dz157x7JDz3icpJ5HXiRcvQ</span><br><span class="line">      MINIO_SECRET_KEY: ZSCRkEcLXidts2h8XFfja7a2zFuvEUCRimASUivJcEzfaHcQ</span><br><span class="line">    entrypoint: sh</span><br><span class="line">    command: -c &#x27;mkdir -p /data/notea &amp;&amp; mkdir -p /data/notea-test &amp;&amp; minio server /data&#x27;</span><br><span class="line"></span><br><span class="line">  notea:</span><br><span class="line">    container_name: notea_server</span><br><span class="line">    restart: unless-stopped</span><br><span class="line">    image: cinwell/notea:main</span><br><span class="line">    ports:</span><br><span class="line">      - 13320:3000</span><br><span class="line">    environment:</span><br><span class="line">      STORE_ACCESS_KEY: Gg0Dz157x7JDz3icpJ5HXiRcvQ</span><br><span class="line">      STORE_SECRET_KEY: ZSCRkEcLXidts2h8XFfja7a2zFuvEUCRimASUivJcEzfaHcQ</span><br><span class="line">      STORE_BUCKET: notea</span><br><span class="line">      STORE_END_POINT: http://minio:9000</span><br><span class="line">      STORE_FORCE_PATH_STYLE: &quot;true&quot;</span><br><span class="line">      PASSWORD: password</span><br><span class="line">      COOKIE_SECURE: &quot;false&quot;</span><br><span class="line">      BASE_URL: http://i35bw-1:13320/</span><br><span class="line">    depends_on:</span><br><span class="line">      - minio</span><br></pre></td></tr></table></figure>
+<p>在控制台输入：<br><code>1. docker-compose -f notea.yml up -d</code><br><a href="/../_resources/4a520c2a44b1f79a79df4f3bb5e720e9.png" title="4a520c2a44b1f79a79df4f3bb5e720e9.png" class="gallery-item" style="box-shadow: none;"> <img src="/../_resources/4a520c2a44b1f79a79df4f3bb5e720e9.png" alt="4a520c2a44b1f79a79df4f3bb5e720e9.png"></a><br>等系统拉取镜像成功并实例化容器。<br>回浏览器，开启新页面，输入lxc的ip地址加端口13320回车，可以看到项目部署成功。<br><a href="/../_resources/2718b0a91fdbad3a1a52bb96f1518ffb.png" title="2718b0a91fdbad3a1a52bb96f1518ffb.png" class="gallery-item" style="box-shadow: none;"> <img src="/../_resources/2718b0a91fdbad3a1a52bb96f1518ffb.png" alt="2718b0a91fdbad3a1a52bb96f1518ffb.png"></a><br>本章不介绍2个容器的使用方法，仅用来做展示说明。</p>
+</div>
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2024-11-01</span>
+            
+            
+             
+        
+        </i>
+    </div>
+    <br>
+    
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2024/11/01/hello-world/">Hello World</a>
+                    </span>
+                
+            </div>
+    
+        
+    
+
+    
+        
+
+     
+</div>
+
+
+
+                                      
+                    
+                    
+                    <div class="footer">
+    
+        <span> 
+            © 1949-2024 China 
+
+            
+                
+
+            
+        </span>
+       
+    
+</div>
+
+
+
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>🌊看过大海的人不会忘记海的广阔🌊</span>
+            
+                <span class="footer-last-span-right"><i>本站由<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a>驱动｜使用<a target="_blank" rel="noopener" href="https://github.com/HiNinoJay/hexo-theme-A4">Hexo-theme-A4</a>主题</i></span>
+            
+    
+</div>
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!--目录-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+        
+<script src="/js/toc.js"></script>
+
+    
+
+    
+<script src="/js/randomHeaderContent.js"></script>
+
+    <!--回到顶部按钮-->
+    
+        
+<script src="/js/returnToTop.js"></script>
+
+    
+
+    
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
+
+
+
+
+
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->  
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+            
+                <!-- 返回的按钮-->  
+                <div class="return-to-last-progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+    </body>
+</html>
